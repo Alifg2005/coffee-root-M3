@@ -1,0 +1,221 @@
+:root {
+  --cream: #f5f0e8;
+  --cream-dark: #ede6d6;
+  --cream-mid: #e8e0cf;
+  --brown-deep: #2c1a0e;
+  --brown-mid: #5c3317;
+  --brown-light: #8b5e3c;
+  --brown-warm: #a0714f;
+  --accent: #c0392b;
+  --accent-soft: #d9534f;
+  --text-main: #2c1a0e;
+  --text-muted: #7a6652;
+  --text-light: #b0967a;
+  --border: #d8cbb8;
+  --shadow: rgba(44, 26, 14, 0.10);
+  --shadow-strong: rgba(44, 26, 14, 0.18);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Lato', 'Helvetica Neue', sans-serif;
+  --radius: 10px;
+  --radius-lg: 18px;
+  --transition: 0.22s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+a    { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--font-sans); border: none; outline: none; }
+
+/* ============================================================
+   2. SHARED: NAVBAR
+   ============================================================ */
+/* NAVBAR  (shared across all pages) */
+/* Make the placeholder itself sticky since navbar is injected inside it */
+#navbar-placeholder {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px var(--shadow);
+}
+.navbar-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.logo-img {
+  width: 70px; 
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%; /* makes it circular */
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.35rem; font-weight: 700;
+  color: var(--brown-deep);
+  letter-spacing: 0.01em; flex-shrink: 0;
+}
+.logo-icon { font-size: 1.5rem; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  font-size: 0.95rem; font-weight: 400;
+  color: var(--text-main); letter-spacing: 0.02em;
+  transition: color var(--transition);
+}
+.nav-links a:hover { color: var(--brown-light); }
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.nav-search {
+  display: flex; align-items: center;
+  background: white; border: 1px solid var(--border);
+  border-radius: 50px; padding: 6px 16px; gap: 8px; width: 300px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.nav-search:focus-within {
+  border-color: var(--brown-warm);
+  box-shadow: 0 0 0 3px rgba(160, 113, 79, 0.12);
+}
+.nav-search input {
+  border: none; outline: none; background: transparent;
+  font-family: var(--font-sans); font-size: 0.87rem;
+  color: var(--text-main); width: 100%;
+}
+.nav-search input::placeholder { color: var(--text-light); }
+.search-icon { color: var(--text-muted); font-size: 0.85rem; }
+.icon-btn {
+  background: transparent; color: var(--text-main);
+  padding: 8px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+.icon-btn:hover { background: var(--cream-dark); color: var(--brown-mid); }
+.cart-btn {
+  background: var(--brown-mid); color: white !important;
+  padding: 10px 12px; border-radius: var(--radius);
+}
+.cart-btn:hover { background: var(--brown-deep); }
+.logout-btn { font-size: 20px; }
+.logout-btn:hover { background: var(--cream-dark); color: var(--accent); }
+
+/* ============================================================
+   3. SHARED: BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background var(--transition), color var(--transition),
+              transform var(--transition), box-shadow var(--transition);
+  text-align: center;
+}
+.btn-dark { background: var(--brown-mid); color: white; }
+.btn-dark:hover {
+  background: var(--brown-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-strong);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--brown-deep);
+  border: 2px solid var(--brown-deep);
+}
+.btn-outline:hover {
+  background: var(--brown-mid); color: white;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   4. SHARED: FOOTER
+   ============================================================ */
+/* FOOTER  (shared across all pages) */
+.footer { background-color: #2c1a0e; color: white; padding: 60px 60px 0; }
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  gap: 50px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-logo { color: white; margin-bottom: 16px; font-size: 1.2rem; }
+.footer-logo .logo-img {
+  width: 80px; height: 80px;
+  object-fit: cover; border-radius: 50%;
+  background-color: white; padding: 4px;
+}
+.brand-col p {
+  color: rgba(255,255,255,0.6); font-size: 0.9rem;
+  line-height: 1.7; margin-bottom: 12px; max-width: 240px;
+}
+.brand-col small { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
+.footer-col h4 {
+  font-size: 1rem; font-family: Georgia, serif;
+  font-weight: 700; color: white; margin-bottom: 20px;
+}
+.footer-col a {
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-bottom: 12px; font-size: 0.9rem; transition: color 0.2s;
+}
+.footer-col a:hover { color: white; }
+.footer-col p {
+  color: rgba(255,255,255,0.6); font-size: 0.9rem;
+  margin-bottom: 14px; line-height: 1.6;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.footer-col p i { margin-top: 3px; color: #a0714f; flex-shrink: 0; }
+
+/* ============================================================
+   5. SHARED: FORM VALIDATION (validate.js)
+   ============================================================ */
+/* FORM VALIDATION & HELP WINDOW  (validate.js, used on all pages) */
+.input-error {
+  border: 1.5px solid #c0392b !important;
+  background: #fff8f7 !important;
+}
+.field-error {
+  display: block; color: #c0392b;
+  font-size: 12px; margin-top: 4px;
+  font-family: var(--font-sans, sans-serif);
+}
+.cr-help-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 1.5px solid #6b3f1f; background: none;
+  color: #6b3f1f; font-size: 14px; font-weight: 700;
+  cursor: pointer; margin-left: 8px; vertical-align: middle;
+  transition: background 0.15s, color 0.15s; font-family: inherit;
+}
+.cr-help-btn:hover { background: #6b3f1f; color: #fff; }
+.form-success-msg {
+  background: #eafaf1; border: 1px solid #1a7a4a;
+  color: #1a7a4a; border-radius: 8px;
+  padding: 12px 16px; font-size: 14px;
+  margin-top: 12px; display: none;
+}
