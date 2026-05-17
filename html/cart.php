@@ -154,6 +154,10 @@ foreach ($_SESSION['cart'] as $item) {
           <span>Subtotal</span>
           <span>$<?= number_format($subtotal, 2) ?></span>
         </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>Calculated at checkout</span>
+        </div>
         <hr class="summary-divider" />
         <div class="summary-row summary-total">
           <span>Total</span>
@@ -163,8 +167,10 @@ foreach ($_SESSION['cart'] as $item) {
         <form method="POST">
             <div class="payment-methods">
               <h4 class="payment-title">Payment Method</h4>
-              <label class="payment-option"><input type="radio" name="payment" value="card" checked /> Credit Card</label>
-              <label class="payment-option"><input type="radio" name="payment" value="cash" /> Cash on Delivery</label>
+              <label class="payment-option"><input type="radio" name="payment" value="card" checked /> <i class="fa-solid fa-credit-card"></i> Credit / Debit Card</label>
+              <label class="payment-option"><input type="radio" name="payment" value="cash" /> <i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery</label>
+              <label class="payment-option"><input type="radio" name="payment" value="stcpay" /> <i class="fa-solid fa-mobile-screen"></i> STC Pay</label>
+              <label class="payment-option"><input type="radio" name="payment" value="applepay" /> <i class="fa-brands fa-apple"></i> Apple Pay</label>
             </div>
             <button type="submit" name="checkout" class="btn btn-dark checkout-btn">Proceed to Checkout</button>
         </form>
