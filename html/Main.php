@@ -31,6 +31,57 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <div id="navbar-placeholder"></div>
 
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-label">Single Origin &amp; Specialty Blends</p>
+      <h1 class="hero-title">From the Root<br/>to Your Cup</h1>
+      <p class="hero-sub">We source the finest beans from small farms around the world, roasted with care and delivered fresh to your door.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-dark">Shop Now</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-img-placeholder">
+          <span class="logo2">
+            <img src="../img/ethiopian yirgacheffe.jpg" alt="Coffee Roots Logo" class="logo-img3" />
+          </span>
+        </div>
+        <div class="hero-card-text">
+          <span class="card-tag">Featured Blend</span>
+          <p class="card-name">Ethiopian Yirgacheffe</p>
+          <p class="card-sub">Light Roast · Floral &amp; Citrus Notes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stat">
+      <span class="stat-num">10+</span>
+      <span class="stat-label">Origins</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Happy Customers</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Ethically Sourced</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num">Fresh</span>
+      <span class="stat-label">Roasted Weekly</span>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
   <section class="products" id="products">
     <div class="section-header">
       <p class="section-tag">Our Menu</p>
@@ -73,6 +124,86 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <?php endforeach; ?>
       </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <p class="section-tag">Our Story</p>
+      <h2 class="section-title">Rooted in Craft,<br/>Driven by Passion</h2>
+      <p>Coffee Roots was born from a simple belief: exceptional coffee starts long before the roast. We partner directly with small-scale farmers across Ethiopia, Colombia, Guatemala, and beyond, building relationships that are fair, transparent, and lasting.</p>
+      <p>Every bag we sell represents months of careful cultivation, careful selection, and careful roasting. We do not cut corners because your cup deserves the best.</p>
+      <a href="#contact" class="btn btn-dark">Get in Touch</a>
+    </div>
+    <div class="about-visual">
+      <div class="about-img-box">
+        <img src="../img/coffee farm.png" alt="Espresso Maker" class="big-icon"></img>
+        <p class="about-img-caption">Farm-to-Cup Since 2015</p>
+      </div>
+      <div class="about-badges">
+        <div class="about-badge">
+          <span>&#10003;</span> Directly Traded
+        </div>
+        <div class="about-badge">
+          <span>&#10003;</span> Small Batch Roasted
+        </div>
+        <div class="about-badge">
+          <span>&#10003;</span> Carbon Neutral Shipping
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">We'd Love to Hear From You</h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div>
+            <strong>Visit Us</strong>
+            <p>Imam Abdulrahman Bin Faisal University</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Call Us</strong>
+            <p> (+966) 55 444 777</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉</span>
+          <div>
+            <strong>Email Us</strong>
+            <p>coffeeroots@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Email Address" />
+        <textarea placeholder="Your message..." rows="4"></textarea>
+        <button type="submit" class="btn btn-dark">Send Message</button>
+      </form>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.466548174542!2d50.18840277636502!3d26.39579177695922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49e81b6aa50001%3A0xd64d4b295cb68d83!2sImam%20Abdulrahman%20Bin%20Faisal%20University!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sen!2ssa"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
   </section>
 
   <div id="footer-placeholder"></div>
